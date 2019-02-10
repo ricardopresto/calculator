@@ -5,6 +5,7 @@
 <br>
 <br>
 <center>
+<div id="frame">
 <div id="display">0</div>
 <br>
 
@@ -22,14 +23,14 @@
 <button id="dot">.</button>
 </div>
 <div id=keyboard>
-<button id="plus">+</button>
-<button id="minus">-</button>
-<button id="mult">*</button>
-<button id="div">/</button>
-<button id="equals">=</button>
-<button id="clear">C</button>
+<button id="plus" class="func">+</button>
+<button id="minus" class="func">-</button>
+<button id="mult" class="func">*</button>
+<button id="div" class="func">/</button>
+<button id="equals" class="func">=</button>
+<button id="clear" class="func">C</button>
 </div>
-
+</div>
 </center>
 
 <script>
@@ -225,28 +226,41 @@ function calculate() {
 <style type="text/css">
 
 button {
+  font-family: Arial, Helvetica, sans-serif;
 width: 80px;
 height: 80px;
 font-size: 30pt;
 margin: 5px;
 background-color: white;
 border-style: solid;
-border-color: green;
+border-width: 1px;
+border-color: rgb(53, 55, 173);
 border-radius: 12px;
-box-shadow: 5px 5px 10px green;
+box-shadow: 5px 5px 10px rgb(53, 55, 173);
+}
+
+.func {
+border-color: blue;
+border-radius: 12px;
+box-shadow: 5px 5px 10px blue;
 }
 
 #display {
-width: 360px;
-height:55px;
+margin-top: 20px;
+width: 430px;
+height: 55px;
 text-align: left;
-font-size:30pt;
+padding-left: 10px;
+padding-top: 10px;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 30pt;
 border-style: solid;
-border-color: green;
-border-width: 1px;
+border-color: rgb(53, 55, 173);
+border-width: 2px;
 border-radius: 8px;
-color: green;
-box-shadow: 5px 5px 10px green;
+color: black;
+background-color: white;
+box-shadow: 5px 5px 10px rgb(53, 55, 173);
 }
 
 #keyboard {
@@ -261,6 +275,15 @@ flex-flow: row wrap;
 width: 270px;
 }
 
+#frame {
+border-style: solid;
+border-width: 2px;
+border-radius: 10px;
+border-color: rgb(53, 55, 173);
+width: 480px;
+height: 500px;
+background-color: rgb(197, 197, 245)
+}
 
 </style>
 
