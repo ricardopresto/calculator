@@ -15,10 +15,15 @@
 <button id="four">4</button>
 <button id="five">5</button>
 <button id="six">6</button>
+<button id="seven">7</button>
+<button id="eight">8</button>
+<button id="nine">9</button>
+<button id="zero">0</button>
 <button id="dot">.</button>
 <button id="plus">+</button>
 <button id="minus">-</button>
 <button id="mult">*</button>
+<button id="div">/</button>
 <button id="equals">=</button>
 <button id="clear">C</button>
 </div>
@@ -34,10 +39,15 @@ var three = document.getElementById('three');
 var four = document.getElementById('four');
 var five = document.getElementById('five');
 var six = document.getElementById('six');
+var seven = document.getElementById('seven');
+var eight = document.getElementById('eight');
+var nine = document.getElementById('nine');
+var zero = document.getElementById('zero');
 var dot = document.getElementById('dot');
 var plus = document.getElementById('plus');
 var minus = document.getElementById('minus');
 var mult = document.getElementById('mult');
+var div = document.getElementById('div');
 var equals = document.getElementById('equals');
 var clear = document.getElementById('clear');
 var display = document.getElementById('display');
@@ -49,10 +59,15 @@ three.addEventListener('click', numkey);
 four.addEventListener('click', numkey);
 five.addEventListener('click', numkey);
 six.addEventListener('click', numkey);
+seven.addEventListener('click', numkey);
+eight.addEventListener('click', numkey);
+nine.addEventListener('click', numkey);
+zero.addEventListener('click', numkey);
 dot.addEventListener('click', dotkey);
 plus.addEventListener('click', pluskey);
 minus.addEventListener('click', minuskey);
 mult.addEventListener('click', multkey);
+div.addEventListener('click', divkey);
 equals.addEventListener('click', equalskey);
 clear.addEventListener('click', clearkey);
 
@@ -122,6 +137,18 @@ if (fkey == false) {
   func = 'mult';
  }
 
+ function divkey() {
+if (fkey == false) {
+  fkey = true;
+  func = 'div';
+  input1 = display.textContent;
+  }
+  else {
+  secondfunction();
+  }
+  func = 'div';
+ }
+
 function equalskey() {
   if (func == 'plus') {
   result = Number(input1) + Number(input2);
@@ -133,6 +160,10 @@ function equalskey() {
   }
   if (func == 'mult') {
   result = Number(input1) * Number(input2);
+  reset();
+  }
+  if (func == 'div') {
+  result = Number(input1) / Number(input2);
   reset();
   }
 }
