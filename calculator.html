@@ -2,20 +2,28 @@
 <head>
 </head>
 <body>
+<br>
+<br>
+<center>
+<div id="display">0</div>
+<br>
 
+<div id=keyboard>
 <button id="one">1</button>
 <button id="two">2</button>
 <button id="three">3</button>
 <button id="four">4</button>
+<button id="five">5</button>
+<button id="six">6</button>
 <button id="dot">.</button>
 <button id="plus">+</button>
 <button id="minus">-</button>
 <button id="mult">*</button>
 <button id="equals">=</button>
 <button id="clear">C</button>
+</div>
 
-<div id="display">0</div>
-
+</center>
 
 <script>
 
@@ -24,6 +32,8 @@ var one = document.getElementById('one');
 var two = document.getElementById("two");
 var three = document.getElementById('three');
 var four = document.getElementById('four');
+var five = document.getElementById('five');
+var six = document.getElementById('six');
 var dot = document.getElementById('dot');
 var plus = document.getElementById('plus');
 var minus = document.getElementById('minus');
@@ -37,6 +47,8 @@ one.addEventListener('click', numkey);
 two.addEventListener('click', numkey);
 three.addEventListener('click', numkey);
 four.addEventListener('click', numkey);
+five.addEventListener('click', numkey);
+six.addEventListener('click', numkey);
 dot.addEventListener('click', dotkey);
 plus.addEventListener('click', pluskey);
 minus.addEventListener('click', minuskey);
@@ -70,7 +82,7 @@ function dotkey() {
   if (input2 == '') { input2 = '0'};
   input2 = input2 + '.';} 
   }
-  updateDisplay();
+  //updateDisplay();
 }
 
 function pluskey() {
@@ -180,20 +192,35 @@ function calculate() {
 <style type="text/css">
 
 button {
-width: 60px;
-height: 60px;
+width: 80px;
+height: 80px;
 font-size: 30pt;
-margin: 20px;
+margin: 5px;
+background-color: white;
+border-style: solid;
+border-color: green;
+border-radius: 12px;
+box-shadow: 5px 5px 10px green;
 }
 
 #display {
-height:50px;
-margin: 30px;
+
+width: 360px;
+height:55px;
+text-align: left;
 font-size:30pt;
 border-style: solid;
-border-color: black;
+border-color: green;
 border-width: 1px;
-color: blue;
+border-radius: 8px;
+color: green;
+box-shadow: 5px 5px 10px green;
+}
+
+#keyboard {
+display: flex;
+flex-flow: row wrap;
+width: 360px;
 }
 
 </style>
