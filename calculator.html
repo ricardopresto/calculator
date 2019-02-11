@@ -80,7 +80,7 @@ var input2 = '';
 var func = '';
 var result;
 
-var buttons = document.querySelectorAll("button");
+var buttons = document.getElementsByClassName("btn");
 
 for(var i = 0; i < buttons.length; i++){
   buttons[i].addEventListener("mousedown", press);
@@ -90,20 +90,20 @@ for(var i = 0; i < buttons.length; i++){
 var funcbuttons = document.getElementsByClassName("func");
 
 for(var i = 0; i < funcbuttons.length; i++){
-  funcbuttons[i].removeEventListener("mousedown", press);
-  funcbuttons[i].addEventListener("mousedown", funcpress);
+  funcbuttons[i].addEventListener("mousedown", press);
+  funcbuttons[i].addEventListener("mouseup", funcrelease);
 }
 
 function press() {
-  this.style.backgroundColor='blue';
-}
-
-function funcpress() {
-  this.style.backgroundColor='red';
+  this.style.boxShadow='none';
 }
 
 function release() {
-  this.style.backgroundColor='white';
+  this.style.boxShadow='5px 5px 10px rgb(53, 55, 173)';
+}
+
+function funcrelease() {
+  this.style.boxShadow='5px 5px 10px rgb(245, 24, 24)';
 }
 
 function numkey() {
@@ -252,7 +252,7 @@ function calculate() {
 <style type="text/css">
 
 button {
-  font-family: Arial, Helvetica, sans-serif;
+font-family: Arial, Helvetica, sans-serif;
 width: 80px;
 height: 80px;
 font-size: 30pt;
@@ -263,6 +263,7 @@ border-width: 1px;
 border-color: rgb(53, 55, 173);
 border-radius: 12px;
 box-shadow: 5px 5px 10px rgb(53, 55, 173);
+outline: none;
 }
 
 .func {
@@ -309,7 +310,7 @@ margin: 0 auto;
 border-style: solid;
 border-width: 1px;
 border-radius: 10px;
-border-color: rgb(53, 55, 173);
+border-color: white;
 width: 480px;
 height: 500px;
 background-color: white;
