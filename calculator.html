@@ -4,23 +4,23 @@
 <body>
 <br>
 <br>
-<center>
+
 <div id="frame">
 <div id="display">0</div>
 <br>
 
 <div id=numkeys>
-<button id="one">1</button>
-<button id="two">2</button>
-<button id="three">3</button>
-<button id="four">4</button>
-<button id="five">5</button>
-<button id="six">6</button>
-<button id="seven">7</button>
-<button id="eight">8</button>
-<button id="nine">9</button>
-<button id="zero">0</button>
-<button id="dot">.</button>
+<button id="one" class="btn">1</button>
+<button id="two" class="btn">2</button>
+<button id="three" class="btn">3</button>
+<button id="four" class="btn">4</button>
+<button id="five" class="btn">5</button>
+<button id="six" class="btn">6</button>
+<button id="seven" class="btn">7</button>
+<button id="eight" class="btn">8</button>
+<button id="nine" class="btn">9</button>
+<button id="zero" class="btn">0</button>
+<button id="dot" class="btn">.</button>
 </div>
 <div id=keyboard>
 <button id="plus" class="func">+</button>
@@ -31,7 +31,7 @@
 <button id="clear" class="func">C</button>
 </div>
 </div>
-</center>
+
 
 <script>
 
@@ -79,6 +79,32 @@ var input1 = '';
 var input2 = '';
 var func = '';
 var result;
+
+var buttons = document.querySelectorAll("button");
+
+for(var i = 0; i < buttons.length; i++){
+  buttons[i].addEventListener("mousedown", press);
+  buttons[i].addEventListener("mouseup", release);
+}
+
+var funcbuttons = document.getElementsByClassName("func");
+
+for(var i = 0; i < funcbuttons.length; i++){
+  funcbuttons[i].removeEventListener("mousedown", press);
+  funcbuttons[i].addEventListener("mousedown", funcpress);
+}
+
+function press() {
+  this.style.backgroundColor='blue';
+}
+
+function funcpress() {
+  this.style.backgroundColor='red';
+}
+
+function release() {
+  this.style.backgroundColor='white';
+}
 
 function numkey() {
   if (fkey == false) {
@@ -240,12 +266,13 @@ box-shadow: 5px 5px 10px rgb(53, 55, 173);
 }
 
 .func {
-border-color: blue;
+border-color: rgb(245, 24, 24);
 border-radius: 12px;
-box-shadow: 5px 5px 10px blue;
+box-shadow: 5px 5px 10px rgb(245, 24, 24);
 }
 
 #display {
+margin: 0 auto;
 margin-top: 20px;
 width: 430px;
 height: 55px;
@@ -264,25 +291,28 @@ box-shadow: 5px 5px 10px rgb(53, 55, 173);
 }
 
 #keyboard {
+margin-left: 5px;
 display: inline-flex;
 flex-flow: row wrap;
 width: 180px;
 }
 
 #numkeys {
+margin-left: 10px;
 display: inline-flex;
 flex-flow: row wrap;
 width: 270px;
 }
 
 #frame {
+margin: 0 auto;
 border-style: solid;
-border-width: 2px;
+border-width: 1px;
 border-radius: 10px;
 border-color: rgb(53, 55, 173);
 width: 480px;
 height: 500px;
-background-color: rgb(197, 197, 245)
+background-color: white;
 }
 
 </style>
